@@ -1,11 +1,16 @@
-public class WinSystem : ISystem {
-    public Game owner { get; set; }
+using Assets.Scripts.Model;
 
-    public void DetermineMatchEnded (Player winner) {
-        if (winner == null) {
-            // another round
-        } else {
-            // match is over
+namespace Assets.Scripts.System
+{
+    public class WinSystem : ISystem {
+        public Game owner { get; set; }
+
+        public void DetermineMatchEnded (RPS_Player winner) {
+            if (winner == null) {
+                // another round
+            } else {
+                // match is over
+            }
         }
     }
 }

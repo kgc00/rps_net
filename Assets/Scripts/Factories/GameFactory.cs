@@ -1,12 +1,19 @@
-public static class GameFactory {
+using Assets.Scripts.Model;
+using Assets.Scripts.Networking;
+using Assets.Scripts.System;
 
-    public static Game Create () {
-        Game game = new Game ();
+namespace Assets.Scripts.Factories
+{
+    public static class GameFactory {
 
-        // Add Systems
-        var playerActionSelectionSystem = game.AddSystem<PlayerActionSelectionSystem> ();
-        playerActionSelectionSystem.Initialize ();
+        public static Game Create () {
+            Game game = new Game ();
 
-        return game;
+            // Add Systems
+            var playerActionSelectionSystem = game.AddSystem<PlayerActionSelectionSystem> ();
+            playerActionSelectionSystem.Initialize ();
+
+            return game;
+        }
     }
 }

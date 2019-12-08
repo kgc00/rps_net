@@ -1,5 +1,8 @@
-public enum ControlMode {
-    LOCAL,
-    REMOTE,
-    AI,
+namespace Assets.Scripts.Enums
+{
+    public enum ControlMode {
+        LOCAL,
+        REMOTE,
+        AI,
+    }
 }

@@ -1,18 +1,24 @@
 using System;
+using Assets.Scripts.Commands;
+using Assets.Scripts.Enums;
+using Assets.Scripts.Model;
 
-public class ActionSystem : ISystem {
+namespace Assets.Scripts.System
+{
+    public class ActionSystem : ISystem {
 
-    Game ISystem.owner { get; set; }
+        Game ISystem.owner { get; set; }
 
-    public static ActionCommand GenerateActionCommand (Player player) {
-        // skip default option at end of enum
-        var lengthOfValidEntries = Enum.GetNames (typeof (ActionType)).Length - 1;
+        public static ActionCommand GenerateActionCommand (RPS_Player player) {
+            // skip default option at end of enum
+            var lengthOfValidEntries = Enum.GetNames (typeof (ActionType)).Length - 1;
 
-        int rand = UnityEngine.Random.Range (0, lengthOfValidEntries);
-        return new ActionCommand ((ActionType) rand, player);
-    }
+            int rand = UnityEngine.Random.Range (0, lengthOfValidEntries);
+            return new ActionCommand ((ActionType) rand, player);
+        }
 
-    public static ActionCommand GenerateActionCommand (ActionType actionType, Player player) {
-        return new ActionCommand (actionType, player);
+        public static ActionCommand GenerateActionCommand (ActionType actionType, RPS_Player player) {
+            return new ActionCommand (actionType, player);
+        }
     }
 }
